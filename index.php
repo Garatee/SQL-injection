@@ -18,7 +18,7 @@
 				<button type="submit" class="btn btn-primary col-sm-2 f-25">Search</button>
 			</div>
 			
-			<table class='table table-hover table-bordered text-left mt-1 white w-70 mx-auto'>
+			<table class='table table-hover table-bordered text-left mt-1 white w-70 mx-auto f-20'>
 				<thead>
 					<tr>
 						<th>SQL INJECTIONS EXAMPLE</th>
